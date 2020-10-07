@@ -1,0 +1,10 @@
+server:
+  servlet:
+    context-path: /newways
+spring:
+  profiles:
+    active: dev-h2
+  application:
+    name: try-new-ways
+  main:
+    allow-bean-definition-overriding: true
