@@ -2,7 +2,7 @@ package com.malfer.trynewways.domain.controller;
 
 import com.malfer.trynewways.domain.model.Domain;
 import com.malfer.trynewways.domain.model.DomainUser;
-import com.malfer.trynewways.domain.model.DomainUserId;
+import com.malfer.trynewways.domain.model.DomainUserDTO;
 import com.malfer.trynewways.domain.service.DomainService;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +26,7 @@ public class DomainController {
     }
 
     @PostMapping(value = "/assign-user",consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<DomainUser> assignUser (@RequestBody DomainUserId domainUserId){
-        return ResponseEntity.ok(domainService.assignUser(domainUserId));
+    public ResponseEntity<DomainUser> assignUser (@RequestBody DomainUserDTO domainUserDTO){
+        return ResponseEntity.ok(domainService.assignUser(domainUserDTO));
     }
 }

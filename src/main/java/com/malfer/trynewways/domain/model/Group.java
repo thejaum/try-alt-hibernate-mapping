@@ -19,10 +19,8 @@ public class Group extends BaseEntityModel implements Serializable {
     @Column(name = "description", length = 80, nullable = false)
     private String description;
 
-    /*@ManyToMany
-    @JoinTable(name = "group_domain_users",
-    joinColumns = @JoinColumn(name="group_id"),
-    inverseJoinColumns = @JoinColumn(name = "domain_user_id"))
-    private List<DomainUser> domainUsers;*/
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "domain_user_id")
+    private DomainUser domainUser;
 
 }
