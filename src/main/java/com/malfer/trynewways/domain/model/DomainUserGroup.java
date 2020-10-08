@@ -5,7 +5,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 @Data
 @Builder
@@ -13,15 +12,14 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "domain_user", schema = "newways")
-public class DomainUser extends BaseEntityModel implements Serializable {
+@Table(name = "group_domain_users", schema = "newways")
+public class DomainUserGroup extends BaseEntityModel implements Serializable {
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "domain_user_id")
+    private DomainUser domainUser;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "domain_id")
-    private Domain domain;
-
+    @JoinColumn(name = "group_id")
+    private Group group;
 }

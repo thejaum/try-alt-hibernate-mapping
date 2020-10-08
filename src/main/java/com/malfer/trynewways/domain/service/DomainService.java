@@ -31,7 +31,6 @@ public class DomainService {
         Optional<Domain> domain = domainRepository.findById(DomainUserId.getDomainId());
         Optional<User> user = userRepository.findById(DomainUserId.getUserId());
         DomainUser domainUser = DomainUser.builder()
-                .id(DomainUserId)
                 .domain(domain.get())
                 .user(user.get())
                 .build();
