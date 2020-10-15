@@ -3,7 +3,7 @@ server:
     context-path: /newways
 spring:
   profiles:
-    active: dev-h2
+    active: dev-postgres
   application:
     name: try-new-ways
   main:

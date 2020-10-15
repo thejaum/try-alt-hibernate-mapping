@@ -3,10 +3,7 @@ package com.malfer.trynewways.domain.model;
 import com.malfer.trynewways.domain.infra.BaseEntityModel;
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
 
@@ -21,5 +18,9 @@ public class Domain extends BaseEntityModel implements Serializable {
 
     @Column(name = "company_name", length = 255, nullable = false)
     private String companyName;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "personal_type", length = 1, nullable = false,columnDefinition="CHAR")
+    private PersonalType personalType;
 
 }
